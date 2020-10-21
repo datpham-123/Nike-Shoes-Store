@@ -1,0 +1,25 @@
+/** @format */
+
+.header {
+  background-color: $secondary-color;
+  &-phone {
+    &__icon {
+      transform: translateY(10%);
+    }
+  }
+  @media screen and (max-width: 575px) {
+    &-helpers {
+      display: flex;
+    }
+  }
+  @media screen and (min-width: 575px) {
+    &-social {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-helpers {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

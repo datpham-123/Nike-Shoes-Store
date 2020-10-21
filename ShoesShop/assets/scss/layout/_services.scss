@@ -1,0 +1,15 @@
+/** @format */
+
+.services {
+  background-color: $primary-color;
+  .container-services {
+    margin: 0 auto;
+  }
+  &-item__container {
+    display: flex;
+  }
+  &__icon {
+    margin-right: 1rem;
+    transform: translateY(30%);
+  }
+}
