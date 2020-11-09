@@ -1,0 +1,24 @@
+/** @format */
+
+// layout product detail
+.pdetail {
+  .item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: calc(3 * var(--grid-gap-primary));
+    overflow-x: hidden;
+  }
+  .img-showcase {
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  .img-more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, calc(33.33% - 20px));
+    grid-gap: 30px;
+    cursor: pointer;
+    @media screen and (max-width: 768px) {
+      grid-gap: 10px;
+    }
+  }
+}

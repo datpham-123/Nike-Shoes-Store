@@ -1,0 +1,28 @@
+/** @format */
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(500px, 1fr) minmax(400px, auto) auto minmax( auto, 300px);
+  grid-gap: calc(4 * var(--grid-gap-primary));
+  grid-auto-rows: 1fr;
+  grid-template-areas: 'hero hero hero hero' 'feature feature feature feature' 'subscribe subscribe subscribe subscribe' 'services services services services';
+  .hero {
+    grid-area: hero;
+  }
+  .feature {
+    grid-area: feature;
+    display: grid;
+    grid-gap: calc(4 * var(--grid-gap-primary));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .subscribe {
+    grid-area: subscribe;
+  }
+  .services {
+    grid-area: services;
+    display: grid;
+    grid-gap: calc(4 * var(--grid-gap-primary));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}

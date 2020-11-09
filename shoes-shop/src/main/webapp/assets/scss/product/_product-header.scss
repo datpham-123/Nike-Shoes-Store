@@ -1,0 +1,93 @@
+/** @format */
+
+.products {
+  --padding-base: 0.5rem;
+  --margin-base: 0.5rem;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    margin-bottom: calc(10 * var(--margin-base));
+    &>* {
+      margin-bottom: calc(8 * var(--margin-base));
+    }
+  }
+  &-header__desc {
+    font-size: 80%;
+    color: var(--primary-color);
+  }
+  &-filter {
+    width: 80%;
+    font-size: 80%;
+    margin: 0 auto;
+    padding: calc(2 * var(--padding-base)) 0 calc(2 * var(--padding-base)) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // background: var(--primary-color);
+    .products-cate {
+      cursor: pointer;
+      padding: var(--padding-base) 0 var(--padding-base) 0;
+      width: calc(25% - 1.5rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid var(--bg);
+      transition: calc(2 * var(--transition-primary)) linear;
+      &:hover {
+        transform: scaleX(1.1);
+        background-color: var(--primary-color);
+      }
+    }
+    // responsive filter in mobile
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      .products-cate {
+        width: 100%;
+      }
+      .products-cate1,
+      .products-cate2,
+      .products-cate3 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  // seach product
+  &-search {
+    // border: 2px solid blue;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    .form-search {
+      position: relative;
+      // border: 2px solid green;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      &-input {
+        flex: 1;
+        padding: 1rem 1.5rem;
+        color: var(--bg);
+        background-color: var(--text);
+        border: 0;
+        border-radius: 4px;
+      }
+      &-button {
+        flex-shrink: 0;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 0;
+        cursor: pointer;
+        color: var(--text);
+        background-color: var(--bg);
+      }
+    }
+  }
+}

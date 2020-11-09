@@ -1,0 +1,23 @@
+/** @format */
+
+.services {
+  --padding-base: 0.5rem;
+  --margin-base: 0.5rem;
+  margin-bottom: calc(8 * var(--margin-base));
+  &-item {
+    background: var(--theme);
+    padding: calc(3 * var(--padding-base));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: var(--line-height-primary);
+  }
+  &__icon {
+    color: var(--primary-color);
+    margin-bottom: calc(2 * var(--margin-base));
+  }
+  &-header {
+    margin-bottom: calc(4 * var(--margin-base));
+  }
+}

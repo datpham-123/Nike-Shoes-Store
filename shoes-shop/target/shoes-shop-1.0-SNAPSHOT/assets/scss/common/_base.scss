@@ -1,0 +1,136 @@
+/** @format */
+
+@import 'variables';
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-primary);
+  background: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+  transition: background calc(5 * var(--transition-primary)) ease-in-out, color calc(10 * var(--transition-primary)) ease-in-out;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-primary);
+  font-weight: normal;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--bg);
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--bg);
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--bg);
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--bg);
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--text);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text);
+}
+
+.btn-dark {
+  background: var(--light8);
+  color: var(--light0);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  // box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  &:hover {
+    // box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+  }
+}
+
+.my-card {
+  font-size: 1.6rem;
+}

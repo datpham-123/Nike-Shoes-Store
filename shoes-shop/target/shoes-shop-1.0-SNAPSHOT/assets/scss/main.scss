@@ -1,0 +1,24 @@
+/** @format */
+
+@import './common/base';
+@import './common/nav';
+// gallery page
+@import './gallery/layout';
+@import './gallery/gallery';
+// home page
+@import './home/layout-home';
+@import './home/hero';
+@import './home/feature';
+@import './home/subscribe';
+@import './home/services';
+// product page
+@import './product/layout-product';
+@import './product/product-header';
+@import './product/product';
+@import './product/pagination';
+// product details page
+@import './product-detail/layout-product-detail';
+@import './product-detail/item';
+// login page
+@import './login/layout-login';
+@import './login/login';

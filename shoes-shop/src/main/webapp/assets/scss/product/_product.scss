@@ -1,0 +1,49 @@
+/** @format */
+
+.product {
+  --margin-base: 0.5rem;
+  display: flex;
+  padding: 3rem;
+  // overflow-x: scroll;
+  &-card {
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    // min-height: 350px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: var(--theme);
+    transition: 0.2s;
+    // style components
+    .card-name {
+      margin-top: calc(3 * var(--margin-base));
+      margin-bottom: calc(3 * var(--margin-base));
+    }
+    .card-price {
+      margin-bottom: calc(6 * var(--margin-base));
+    }
+    .card-buy {
+      margin-bottom: calc(3 * var(--margin-base));
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 4px;
+    }
+    &:hover {
+      transform: translateY(-3px) scale(1.1);
+    }
+  }
+  // style scroll card
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25);
+  }
+  &::-webkit-scrollbar-track {
+    background: linear-gradient( 90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+  }
+}

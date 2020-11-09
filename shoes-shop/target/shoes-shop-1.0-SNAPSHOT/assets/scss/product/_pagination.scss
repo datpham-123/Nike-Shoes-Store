@@ -1,0 +1,19 @@
+/** @format */
+
+.pagination {
+  &-list {
+    display: flex;
+    justify-content: center;
+  }
+  &-item {
+    margin: 0 1.5rem;
+    font-size: 2rem;
+    color: var(--text);
+    opacity: 1;
+    cursor: pointer;
+    transition: all calc(2 * var(--transition-primary)) linear;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
