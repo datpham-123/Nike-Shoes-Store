@@ -10,8 +10,14 @@
   .hero {
     grid-area: hero;
   }
-  .feature {
+  .new-products {
     grid-area: feature;
+    // display: grid;
+    // grid-gap: calc(4 * var(--grid-gap-primary));
+    // grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .feature {
+    // grid-area: feature;
     display: grid;
     grid-gap: calc(4 * var(--grid-gap-primary));
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

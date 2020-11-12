@@ -73,8 +73,9 @@ button {
   color: var(--bg);
 }
 
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+a:link,
+a:visited {
+  color: var(--text);
 }
 
 .text-center {

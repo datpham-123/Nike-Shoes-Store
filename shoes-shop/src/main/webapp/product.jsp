@@ -1,8 +1,11 @@
-<%@ page import="dal.ProductDAO" %>
+<%@ page import="dal.product.ProductDAO" %>
+<%@ page import="entity.product.Product" %>
+<%@ page import="java.util.List" %>
 <!-- @format -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +30,7 @@
 </head>
 
 <body class="dark">
+
 <div class="wrapper wrapper-products">
     <nav class="navbar">
         <ul class="navbar-list">
@@ -92,24 +96,27 @@
                     <span class="navbar-text">Gallery</span></a>
             </li>
 
-            <li class="navbar-item">
-                <a href="about.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle navbar-icon"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"
-                        />
-                        <path
-                                fill-rule="evenodd"
-                                d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                        />
-                        <path
-                                fill-rule="evenodd"
-                                d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                        />
-                    </svg>
-                    <span class="navbar-text">About</span></a>
-            </li>
+            <%--navbar item after login--%>
+            <c:if test="${sessionScope.accountLogin ne null}">
+                <li class="navbar-item">
+                    <a href="about.jsp" class="navbar-link">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle navbar-icon"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"
+                            />
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                            />
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                            />
+                        </svg>
+                        <span class="navbar-text">${sessionScope.accountLogin.account}</span></a>
+                </li>
+            </c:if>
 
             <li class="navbar-item">
                 <a href="login.jsp" class="navbar-link">
@@ -165,17 +172,26 @@
     </nav>
     <!-- end navbar -->
     <section class="main-content products">
-        <%-- number of products here--%>
+
         <div class="products-header">
             <h2 class="products-header__head">All Products</h2>
-            <p class="products-header__desc">There are total ${requestScope.numberOfProducts} products</p>
+            <%-- TOTAL PRODUCTS NUMBER--%>
+            <p class="products-header__desc">
+                There are total ${requestScope.totalProduct}
+                products
+            </p>
 
-            <%--search function here--%>
+            <%--SEARCH FORM HERE--%>
             <div class="products-search">
                 <%--pass to servlet search ( "/search")--%>
                 <form action="search" class="form-search" method="get">
-                    <input type="text" class="form-search-input" name="search-product"
-                           placeholder="Enter product name...."/>
+                    <input
+                            type="text"
+                            name="search-product"
+                            value="${requestScope.searchProduct}"
+                            class="form-search-input"
+                            placeholder="Enter product name...."
+                    />
                     <button type="submit" class="form-search-button">
                         <svg
                                 width="1em"
@@ -198,30 +214,33 @@
                 </form>
             </div>
 
-            <%--All Products types here--%>
+            <%--FILTER PRODUCT TYPES HERE--%>
             <div class="products-filter">
-                <%--                <div class="products-cate products-cate1"><a href="filter-type?id=0">All</a></div>--%>
-                <c:forEach items="${requestScope.listAllProductTypes}" var="type">
+                <c:forEach items="${requestScope.listProductType}" var="type">
                     <%--link to filter servlet here: filter?id= --%>
-                    <div class="products-cate products-cate${type.id+1}"><a
-                            href="filter-type?id=${type.id}">${type.type}</a>
+                    <div class="products-cate products-cate${type.id+1}">
+                        <a href="filter-type?id=${type.id}">${type.type}</a>
                     </div>
                 </c:forEach>
             </div>
         </div>
 
-        <!-- end product filter -->
 
-        <%-- All Products display here--%>
+        <%-- ALL PRODUCTS DISPLAY HERE--%>
         <div class="product">
-            <c:forEach items="${requestScope.listAllProducts}" var="product">
+            <%--pagination--%>
+            <c:forEach items="${requestScope.listProduct}" var="product">
                 <article class="product-card">
                         <%--product image--%>
                     <img src="./assets/images/products/${product.image}" alt="product"
                          class="product-card__img"/>
                     <div class="product-card-content">
                         <div class="card-name">${product.name}</div>
-                        <div class="card-price">${product.price}$</div>
+                        <%--currency format--%>
+                        <div class="card-price">
+                            <fmt:setLocale value="en_US"/>
+                            <fmt:formatNumber value="${product.price}" type="currency"/>
+                        </div>
                             <%--passed to product detail servlet--%>
                         <a href="product-detail?id=${product.id}" class="card-buy">Detail</a>
                     </div>
@@ -231,36 +250,37 @@
 
         <%--pagination--%>
         <div class="pagination">
-
+            <%--page number--%>
             <ul class="pagination-list">
-                <%-- previous --%>
-                <li class="pagination-item pagination-action pagination-prev is-disabled">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                fill-rule="evenodd"
-                                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                        />
-                    </svg>
-                </li>
-                <li class="pagination-item">1</li>
-                <li class="pagination-item is-active">2</li>
-                <li class="pagination-item">3</li>
-                <li class="pagination-item">4</li>
-                <li class="pagination-item">5</li>
-                <%-- next --%>
-                <li class="pagination-item pagination-action pagination-next">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                        />
-                    </svg>
-                </li>
-            </ul>
+                <c:forEach items="${requestScope.listPage}" var="page">
+                    <li class="pagination-item ${requestScope.page == page ? "is-active" : ""}">
 
+                            <%--page index of all products--%>
+                        <c:if test="${requestScope.pageMode == 1}">
+                            <a href="${pageContext.request.contextPath}/list-products?page=${page}">
+                                    ${page}
+                            </a>
+                        </c:if>
+
+                            <%--page index of all searcged products--%>
+                        <c:if test="${requestScope.pageMode == 2}">
+                            <a href="${pageContext.request.contextPath}/search?search-product=${requestScope.searchProduct}&page=${page}">
+                                    ${page}
+                            </a>
+                        </c:if>
+
+                            <%--page index of all typeid products--%>
+                        <c:if test="${requestScope.pageMode == 3}">
+                            <a href="${pageContext.request.contextPath}/filter-type?id=${requestScope.typeID}&page=${page}">
+                                    ${page}
+                            </a>
+                        </c:if>
+
+                    </li>
+                </c:forEach>
+            </ul>
         </div>
+
         <!-- end pagination -->
     </section>
     <!-- end main content -->

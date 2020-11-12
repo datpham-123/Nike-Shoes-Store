@@ -4,6 +4,7 @@
   --margin-base: 0.5rem;
   margin-bottom: calc(10 * var(--margin-base));
   &-header {
+    font-size: 2rem;
     margin-bottom: calc(6 * var(--margin-base));
   }
   &-form {

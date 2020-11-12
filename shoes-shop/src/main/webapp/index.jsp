@@ -9,23 +9,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="./assets/icons/favicon/dou-shou-qi-wolf-64-194531.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/icons/favicon/dou-shou-qi-wolf-64-194531.png"/>
 
     <!-- css reset -->
-    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
 
     <!-- google font -->
-    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/css/font.css"/>
 
     <!-- fontawesome -->
     <!-- <link rel="stylesheet" href="./assets/icons/fontawesome/css/all.min.css" /> -->
 
     <!-- gallery css -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css"/>
 
     <title>Home</title>
 </head>
@@ -35,7 +35,8 @@
         <ul class="navbar-list">
             <li class="logo">
                 <a href="#" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right logo-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right logo-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 fill-rule="evenodd"
                                 d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
@@ -50,7 +51,8 @@
             <!-- end class logo -->
             <li class="navbar-item">
                 <a href="index.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house navbar-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 fill-rule="evenodd"
                                 d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
@@ -65,7 +67,8 @@
 
             <li class="navbar-item">
                 <a href="${pageContext.request.contextPath}/list-products" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wallet-fill navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wallet-fill navbar-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z"
                         />
@@ -78,7 +81,8 @@
 
             <li class="navbar-item">
                 <a href="gallery.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images navbar-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 fill-rule="evenodd"
                                 d="M12.002 4h-10a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
@@ -91,27 +95,31 @@
                     <span class="navbar-text">Gallery</span></a>
             </li>
 
-            <li class="navbar-item">
-                <a href="about.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"
-                        />
-                        <path
-                                fill-rule="evenodd"
-                                d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-                        />
-                        <path
-                                fill-rule="evenodd"
-                                d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
-                        />
-                    </svg>
-                    <span class="navbar-text">About</span></a>
-            </li>
+            <c:if test="${sessionScope.accountLogin ne null}">
+                <li class="navbar-item">
+                    <a href="about.jsp" class="navbar-link">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle navbar-icon"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"
+                            />
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                            />
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"
+                            />
+                        </svg>
+                        <span class="navbar-text">${sessionScope.accountLogin.account}</span></a>
+                </li>
+            </c:if>
 
             <li class="navbar-item">
                 <a href="login.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-open-fill navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-door-open-fill navbar-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 fill-rule="evenodd"
                                 d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2v13h1V2.5a.5.5 0 0 0-.5-.5H11zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"
@@ -122,7 +130,8 @@
 
             <li class="navbar-item">
                 <a href="cart.jsp" class="navbar-link">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check-fill navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check-fill navbar-icon"
+                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path
                                 fill-rule="evenodd"
                                 d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"
@@ -134,7 +143,8 @@
             <div class="navbar-item--last">
                 <li class="navbar-item">
                     <a href="#" class="navbar-link" id="light">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-toggle-off navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-toggle-off navbar-icon"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
                                     fill-rule="evenodd"
                                     d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"
@@ -145,7 +155,8 @@
 
                 <li class="navbar-item">
                     <a href="#" class="navbar-link" id="dark">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-toggle-on navbar-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-toggle-on navbar-icon"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
                                     fill-rule="evenodd"
                                     d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
@@ -166,7 +177,8 @@
                 <div class="hero-wrapper">
                     <h1 class="hero-header">Shoes Nike Shop, Cool!</h1>
                     <p class="hero-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /> Culpa tempore quibusdam, numquam quod sed saepe!<br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Culpa tempore quibusdam, numquam
+                        quod sed saepe!<br/>
                     </p>
 
                     <%-- link to register and product pages--%>
@@ -181,69 +193,76 @@
             <!-- end hero content -->
         </section>
         <!-- end hero -->
-        <section class="feature">
-            <div class="card my-card feature-item feature-item--1">
-                <img
-                        src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
-                        alt="feature-item"
-                        class="feature-img"
-                />
-                <!-- feature image -->
-                <div class="feature-content">
-                    <h2 class="feature-name">Nike Air Max</h2>
-                    <p class="feature-price">19.99$</p>
-                    <a class="btn btn-primary btn-block feature-btn text-center"
-                    >Details</a
-                    >
+
+        <div class="new-products">
+            <h2 class="new-products__title">Lastest products</h2>
+            <%--end new products title--%>
+            <section class="feature">
+                <div class="card my-card feature-item feature-item--1">
+                    <img
+                            src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
+                            alt="feature-item"
+                            class="feature-img"
+                    />
+                    <!-- feature image -->
+                    <div class="feature-content">
+                        <h2 class="feature-name">Nike Air Max</h2>
+                        <p class="feature-price">19.99$</p>
+                        <a class="btn btn-primary btn-block feature-btn text-center"
+                        >Details</a
+                        >
+                    </div>
                 </div>
-            </div>
-            <div class="card my-card feature-item feature-item--2">
-                <img
-                        src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
-                        alt="feature-item"
-                        class="feature-img"
-                />
-                <!-- feature image -->
-                <div class="feature-content">
-                    <h2 class="feature-name">Nike Air Max</h2>
-                    <p class="feature-price">19.99$</p>
-                    <a class="btn btn-primary btn-block feature-btn text-center"
-                    >Details</a
-                    >
+                <div class="card my-card feature-item feature-item--2">
+                    <img
+                            src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
+                            alt="feature-item"
+                            class="feature-img"
+                    />
+                    <!-- feature image -->
+                    <div class="feature-content">
+                        <h2 class="feature-name">Nike Air Max</h2>
+                        <p class="feature-price">19.99$</p>
+                        <a class="btn btn-primary btn-block feature-btn text-center"
+                        >Details</a
+                        >
+                    </div>
                 </div>
-            </div>
-            <div class="card my-card feature-item feature-item--3">
-                <img
-                        src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
-                        alt="feature-item"
-                        class="feature-img"
-                />
-                <!-- feature image -->
-                <div class="feature-content">
-                    <h2 class="feature-name">Nike Air Max</h2>
-                    <p class="feature-price">19.99$</p>
-                    <a class="btn btn-primary btn-block feature-btn text-center"
-                    >Details</a
-                    >
+                <div class="card my-card feature-item feature-item--3">
+                    <img
+                            src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
+                            alt="feature-item"
+                            class="feature-img"
+                    />
+                    <!-- feature image -->
+                    <div class="feature-content">
+                        <h2 class="feature-name">Nike Air Max</h2>
+                        <p class="feature-price">19.99$</p>
+                        <a class="btn btn-primary btn-block feature-btn text-center"
+                        >Details</a
+                        >
+                    </div>
                 </div>
-            </div>
-            <div class="card my-card feature-item feature-item--4">
-                <img
-                        src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
-                        alt="feature-item"
-                        class="feature-img"
-                />
-                <!-- feature image -->
-                <div class="feature-content">
-                    <h2 class="feature-name">Nike Air Max</h2>
-                    <p class="feature-price">19.99$</p>
-                    <a class="btn btn-primary btn-block feature-btn text-center"
-                    >Details</a
-                    >
+                <div class="card my-card feature-item feature-item--4">
+                    <img
+                            src="./assets/images/products/running-item1/downshifter-10-running-shoe.jpg"
+                            alt="feature-item"
+                            class="feature-img"
+                    />
+                    <!-- feature image -->
+                    <div class="feature-content">
+                        <h2 class="feature-name">Nike Air Max</h2>
+                        <p class="feature-price">19.99$</p>
+                        <a class="btn btn-primary btn-block feature-btn text-center"
+                        >Details</a
+                        >
+                    </div>
                 </div>
-            </div>
-        </section>
-        <!-- end feature -->
+            </section>
+            <!-- end feature -->
+        </div>
+        <%--end new products--%>
+
         <section class="subscribe">
             <h2 class="subscribe-header">Subscribe for more information</h2>
             <form class="subscribe-form" action="#">
